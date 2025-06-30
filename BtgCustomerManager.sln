@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtgCustomerManager", "BtgCustomerManager\BtgCustomerManager.csproj", "{0621F987-5649-4B80-BC5F-281802FBA297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0621F987-5649-4B80-BC5F-281802FBA297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0621F987-5649-4B80-BC5F-281802FBA297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0621F987-5649-4B80-BC5F-281802FBA297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0621F987-5649-4B80-BC5F-281802FBA297}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:BtgCustomerManager.ViewModels"
+             x:Class="BtgCustomerManager.MainPage">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Grid Grid.Row="0" 
+              ColumnDefinitions="*,Auto,Auto,Auto"
+              Padding="10"
+              BackgroundColor="{StaticResource Primary}">
+ 
+            <Button Grid.Column="1" 
+                    Text="Adicionar"
+                    Command="{Binding AddCustomerCommand}"
+                    Margin="5,0"
+                    TextColor="White"
+                    WidthRequest="100"/>
+            
+            <Button Grid.Column="2" 
+                    Text="Editar"
+                    Command="{Binding EditCustomerCommand}"
+                    Margin="5,0"
+                    TextColor="White"
+                    WidthRequest="100"
+                    />
+            
+            <Button Grid.Column="3" 
+                    Text="Excluir"
+                    Command="{Binding DeleteCustomersCommand}"
+                    Margin="5,0"
+                    TextColor="White"
+                    WidthRequest="100"
+                   />
+        </Grid>
+        
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Customers}"
+                        SelectionMode="None"
+                        SelectedItems="{Binding SelectedCustomers}">
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" 
+                          ColumnDefinitions="Auto,*,Auto">
+                        <CheckBox Grid.Column="0"
+                                  IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                                  VerticalOptions="Center"/>
+                        
+                        <StackLayout Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
+                            <Label FontSize="20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Name}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding LastName}"/>
+                                        <Span Text="&#10;"/>
+                                        <Span Text="Idade:  " FontSize="12"/>
+                                        <Span Text="{Binding Age}" FontSize="13"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                        <Label Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Text="{Binding Address, StringFormat='Endereço: {0}'}" Margin="20,0"/>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
